@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+<title>NASRU’S CLIENTS</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f6b4f'/%3E%3Cstop offset='1' stop-color='%232f5fd0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='900' text-anchor='middle' fill='white'%3ENC%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#f3f6f4;--surface:#fff;--ink:#16231d;--muted:#5d6e66;--line:#dbe4df;--brand:#0f6b4f;--brand-ink:#fff;
+--new:#2f5fd0;--prog:#c27803;--done:#0f6b4f;--danger:#b3261e;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1713;--surface:#18241e;--ink:#e8f1ec;--muted:#93a69c;--line:#2a3a32;--brand:#3fbf92;--brand-ink:#08140f;--new:#7da2ff;--prog:#f0b24a;--done:#3fbf92;--danger:#ff8a80}}
+:root[data-theme="dark"]{--bg:#0f1713;--surface:#18241e;--ink:#e8f1ec;--muted:#93a69c;--line:#2a3a32;--brand:#3fbf92;--brand-ink:#08140f;--new:#7da2ff;--prog:#f0b24a;--done:#3fbf92;--danger:#ff8a80}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.4}
+main{max-width:560px;margin:0 auto;padding:16px 16px 96px}
+h1{font-size:1.5rem;font-weight:800;letter-spacing:.08em;line-height:1.15;margin:8px 0 20px;padding-bottom:10px;position:relative;color:var(--brand);background:linear-gradient(90deg,var(--brand),var(--new));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+h1::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--brand),var(--new))}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:left;cursor:pointer;color:var(--ink);font:inherit}
+.stat b{display:block;font-size:1.6rem;line-height:1.1}
+.stat span{font-size:.8rem;color:var(--muted)}
+.stat.on{outline:2px solid var(--brand)}
+.stat[data-s="New"] b{color:var(--new)}.stat[data-s="In progress"] b{color:var(--prog)}.stat[data-s="Onboarded"] b{color:var(--done)}
+input,select,textarea{width:100%;font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--brand);outline-offset:1px}
+.list{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-align:left;width:100%;color:var(--ink);font:inherit;cursor:pointer}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.name{font-weight:650}
+[hidden]{display:none!important}
+a.btn{display:block;text-align:center;text-decoration:none;margin-top:6px}
+.chk{display:flex;align-items:center;gap:10px;padding:7px 0;margin:0;color:var(--ink);font-size:1rem}
+.chk input{width:22px;height:22px;padding:0;flex:none}
+fieldset{border:0;padding:0;margin:0;min-width:0;display:flex;flex-direction:column;gap:10px}
+input:disabled,select:disabled,textarea:disabled{opacity:1;color:var(--ink);-webkit-text-fill-color:var(--ink);background:transparent}
+fieldset:disabled .chk{opacity:1}
+.dash{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:14px}
+.mnav{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;width:38px;height:34px;font-size:1.2rem;cursor:pointer}
+.mnav:disabled{opacity:.35;cursor:default}
+.big{font-size:2.1rem;font-weight:800;margin:8px 0 6px;line-height:1.1}
+.big .of{font-size:1rem;font-weight:600;color:var(--muted)}
+.bar{height:14px;background:var(--line);border-radius:99px;overflow:hidden}
+#mb{height:100%;width:0;background:var(--brand);border-radius:99px;transition:width .4s}
+#mb.low{background:var(--prog)}
+.cat{margin-top:14px}
+.cat .fill{height:100%;background:var(--brand);border-radius:99px;transition:width .4s}
+.cat .fill.low{background:var(--prog)}
+.cat .cnt{font-weight:800;font-size:1.5rem;line-height:1}
+.tot{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--brand);border:0;font:inherit;cursor:pointer;color:var(--brand-ink);border-radius:99px;padding:7px 18px;box-shadow:0 4px 14px rgba(0,0,0,.25);display:flex;flex-direction:column;align-items:center;line-height:1.1}
+.totp{position:fixed;left:16px;bottom:calc(78px + env(safe-area-inset-bottom,0px));background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:12px 16px;box-shadow:0 6px 18px rgba(0,0,0,.25);min-width:210px;z-index:15}
+.totp .row b{font-size:1.25rem;color:var(--brand)}
+.tot span{font-size:.68rem;color:var(--brand-ink);opacity:.9;font-weight:650}
+.tot b{font-size:1.35rem;color:var(--brand-ink)}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.lb{flex:none;width:auto;padding:10px 20px}
+.dbtn{flex:none;width:auto;padding:8px 16px;font-size:.9rem}
+#list .name,#n{text-transform:uppercase}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.logo{flex:none;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,var(--brand),var(--new));color:var(--brand-ink);font-weight:900;font-size:1.2rem;letter-spacing:.02em;box-shadow:0 4px 12px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.35);margin:8px 0 20px}
+.pill.Inquiry{color:var(--new)}.pill.Cold{color:var(--muted)}.pill.Warm{color:var(--prog)}.pill.Hot{color:var(--danger)}.pill.Client{color:var(--done)}
+.call{color:var(--brand);font-weight:650;text-decoration:none;display:inline-block;padding:4px 0}
+.toast{position:fixed;left:16px;right:16px;bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:12px 14px;border-radius:10px;font-weight:650;z-index:20}
+.due{color:var(--danger);font-weight:650}.today{color:var(--prog);font-weight:650}
+.duebar{background:var(--surface);border:1px solid var(--danger);color:var(--danger);border-radius:10px;padding:9px 12px;margin-bottom:12px;font-weight:650;font-size:.9rem;width:100%;text-align:left;font-family:inherit;cursor:pointer}
+.sub{color:var(--muted);font-size:.9rem}
+.pill{font-size:.75rem;font-weight:650;padding:3px 9px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
+.pill.New{color:var(--new)}.pill.In\ progress{color:var(--prog)}.pill.Onboarded{color:var(--done)}
+.empty{text-align:center;color:var(--muted);padding:32px 12px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--brand);color:var(--brand-ink);border:0;border-radius:99px;padding:14px 20px;font:inherit;font-weight:650;box-shadow:0 4px 14px rgba(0,0,0,.25);cursor:pointer}
+dialog{border:0;border-radius:16px;padding:0;width:min(520px,94vw);background:var(--bg);color:var(--ink)}
+dialog::backdrop{background:rgba(0,0,0,.45)}
+form{padding:18px;display:flex;flex-direction:column;gap:10px}
+label{font-size:.85rem;color:var(--muted);display:block;margin-bottom:3px}
+.btns{display:flex;gap:8px;margin-top:6px}
+.btn{flex:1;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-weight:650;cursor:pointer}
+.btn.p{background:var(--brand);color:var(--brand-ink);border-color:var(--brand)}
+.btn.d{color:var(--danger)}
+.note{font-size:.8rem;color:var(--muted);margin-top:18px;text-align:center}
+/* ===== Visual refresh (styling only) ===== */
+:root{--bg:#eef2f7;--surface:#ffffff;--ink:#0f1b2d;--muted:#64748b;--line:#e2e8f0;--brand:#0b7a5c;--brand-ink:#ffffff;--new:#2563eb;--prog:#d97706;--done:#0b7a5c;--danger:#dc2626;--shadow:0 1px 2px rgba(15,27,45,.06),0 8px 22px rgba(15,27,45,.08)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1220;--surface:#131c2e;--ink:#e6edf7;--muted:#8fa0b8;--line:#223049;--brand:#34d399;--brand-ink:#04130d;--new:#7aa2ff;--prog:#fbbf24;--done:#34d399;--danger:#f87171;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35)}}
+:root[data-theme="dark"]{--bg:#0b1220;--surface:#131c2e;--ink:#e6edf7;--muted:#8fa0b8;--line:#223049;--brand:#34d399;--brand-ink:#04130d;--new:#7aa2ff;--prog:#fbbf24;--done:#34d399;--danger:#f87171;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35)}
+body{font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;background:radial-gradient(900px 380px at 50% -140px,color-mix(in srgb,var(--brand) 16%,transparent),transparent),var(--bg);background-attachment:fixed}
+main{padding-top:20px}
+.card,.stat,.btn,.fab,.mnav,.duebar{transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease,background .15s ease}
+.logo{border-radius:15px;box-shadow:0 6px 16px color-mix(in srgb,var(--brand) 35%,transparent),inset 0 1px 0 rgba(255,255,255,.4)}
+.lb{border-radius:99px;font-weight:700}
+.dash{border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:var(--shadow);background:var(--surface)}
+.mnav{border-radius:10px;background:var(--bg);border:1px solid var(--line);font-weight:700}
+#mt{font-size:1rem;letter-spacing:.02em}
+.cat .row b{font-size:.78rem;letter-spacing:.12em;color:var(--muted)}
+.cat .cnt{font-size:1.6rem;font-weight:800}
+.bar{height:12px;border-radius:99px;background:color-mix(in srgb,var(--muted) 18%,transparent)}
+.cat .fill{background:linear-gradient(90deg,var(--brand),var(--new))}
+.cat .fill.low{background:linear-gradient(90deg,var(--prog),#f59e0b)}
+.stats{gap:10px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px 14px;box-shadow:var(--shadow)}
+.stat b{font-size:1.75rem;font-weight:800}
+.stat span{font-weight:600;letter-spacing:.01em;white-space:nowrap;font-size:.78rem}
+.stat.on{outline:none;border-color:var(--brand);box-shadow:0 0 0 2px var(--brand),var(--shadow)}
+.stat:active,.card:active{transform:scale(.985)}
+input,select,textarea{border-radius:12px;padding:12px 14px;border:1px solid var(--line);background:var(--surface)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 28%,transparent)}
+#q,#lq{border-radius:99px;padding:13px 18px;box-shadow:var(--shadow)}
+label{font-weight:600;font-size:.82rem;color:var(--muted);margin-bottom:5px}
+.chk{font-weight:500;font-size:1rem;color:var(--ink)}
+.list{gap:12px;margin-top:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:var(--shadow)}
+.card:has(.pill.New){border-left-color:var(--new)}
+.card:has(.pill.progress){border-left-color:var(--prog)}
+.card:has(.pill.Onboarded),.card:has(.pill.Client){border-left-color:var(--done)}
+.card:has(.pill.Inquiry){border-left-color:var(--new)}
+.card:has(.pill.Cold){border-left-color:var(--muted)}
+.card:has(.pill.Warm){border-left-color:var(--prog)}
+.card:has(.pill.Hot){border-left-color:var(--danger)}
+.name{font-size:1.02rem;font-weight:700;letter-spacing:.01em}
+.sub{line-height:1.45}
+.pill{background:color-mix(in srgb,currentColor 12%,transparent);border-color:transparent;padding:4px 12px;font-weight:700;letter-spacing:.02em}
+.btn{border-radius:12px;padding:12px 14px;font-weight:650;box-shadow:0 1px 2px rgba(15,27,45,.06)}
+.btn:active{transform:scale(.98)}
+.btn.p{background:linear-gradient(135deg,var(--brand),var(--new));border-color:transparent;color:var(--brand-ink)}
+.btn.dbtn{flex:none;width:auto;padding:8px 18px;font-size:.9rem;border-radius:99px}
+.btn.lb{flex:none;width:auto;padding:10px 22px}
+.fab{background:linear-gradient(135deg,var(--brand),var(--new));color:var(--brand-ink);padding:15px 22px;box-shadow:0 10px 26px color-mix(in srgb,var(--brand) 40%,transparent)}
+.tot{box-shadow:0 10px 26px color-mix(in srgb,var(--brand) 35%,transparent);padding:8px 20px}
+.totp{border-radius:16px;box-shadow:var(--shadow)}
+.duebar{background:color-mix(in srgb,var(--danger) 9%,var(--surface));border:1px solid color-mix(in srgb,var(--danger) 45%,transparent);border-radius:14px;padding:11px 14px;box-shadow:var(--shadow)}
+.empty{border:1.5px dashed var(--line);border-radius:18px;background:color-mix(in srgb,var(--surface) 70%,transparent);padding:30px 16px}
+dialog{border-radius:22px;box-shadow:0 28px 70px rgba(0,0,0,.4);border:1px solid var(--line)}
+dialog::backdrop{background:rgba(8,15,30,.55);backdrop-filter:blur(3px)}
+form{padding:20px;gap:12px}
+dialog h2{font-size:1.25rem;font-weight:800}
+.toast{border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.note{margin-top:22px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* ===== Visual refresh 2 ===== */
+.sec{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:2px 4px 10px}
+.stat[data-s="New"],.stat[data-s="Inquiry"]{border-top:3px solid var(--new)}
+.stat[data-s="In progress"],.stat[data-s="Warm"]{border-top:3px solid var(--prog)}
+.stat[data-s="Onboarded"],.stat[data-s="Already client"]{border-top:3px solid var(--done)}
+.stat[data-s="Cold"]{border-top:3px solid var(--muted)}
+.stat[data-s="Hot"]{border-top:3px solid var(--danger)}
+.empty::before{content:"";display:block;width:46px;height:46px;margin:0 auto 12px;background:linear-gradient(135deg,var(--brand),var(--new));-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.4 0-8 2.7-8 6v1h16v-1c0-3.3-3.6-6-8-6z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 12a4 4 0 100-8 4 4 0 000 8zm0 2c-4.4 0-8 2.7-8 6v1h16v-1c0-3.3-3.6-6-8-6z'/%3E%3C/svg%3E") center/contain no-repeat;opacity:.85}
+.empty{font-weight:500;line-height:1.5}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+dialog[open]{animation:pop .2s ease}
+form{padding:0 20px 20px}
+dialog h2{position:sticky;top:0;z-index:5;margin:0 -20px 4px!important;padding:20px 20px 12px;background:var(--bg);border-bottom:1px solid var(--line)}
+form>.btns:has(#cx),form>.btns:has(#lcx){position:sticky;bottom:0;z-index:5;background:var(--bg);margin:0 -20px;padding:12px 20px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line)}
+div:has(>#callb),div:has(>#lcall){display:grid;grid-template-columns:1fr 1fr;gap:8px}
+div:has(>#callb)>:not(a),div:has(>#lcall)>:not(a){grid-column:1/-1}
+#callb,#lcall,#textb,#ltext{margin-top:0;border-color:transparent;color:var(--brand-ink);padding:11px 10px;font-size:.92rem}
+#callb,#lcall{background:var(--brand)}
+#textb,#ltext{background:var(--new)}
+fieldset:disabled input,fieldset:disabled select,fieldset:disabled textarea{border-color:transparent;background:transparent;box-shadow:none;padding-left:0;padding-right:0;font-weight:600;-webkit-appearance:none;appearance:none;resize:none}
+fieldset:disabled>div{border-bottom:1px solid var(--line);padding-bottom:6px}
+@media (min-width:600px){main{max-width:640px}}
+
+
+
+
+
+/* ===== Empty-details alert ===== */
+.gap{border-color:var(--danger)!important;box-shadow:0 0 0 3px color-mix(in srgb,var(--danger) 22%,transparent)!important}
+@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-9px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(4px)}}
+#lwdlg{width:min(420px,92vw);border:2px solid var(--danger)}
+#lwdlg[open]{animation:pop .2s ease,shake .5s .2s}
+.lwh{display:flex;align-items:center;gap:10px;font-size:1.15rem;font-weight:800;color:var(--danger);margin-bottom:6px}
+.lwh::before{content:"!";flex:none;width:28px;height:28px;border-radius:50%;background:var(--danger);color:#fff;display:grid;place-items:center;font-weight:900}
+#lwl{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:4px 0 6px;list-style:none}
+#lwl li{background:color-mix(in srgb,var(--danger) 12%,transparent);color:var(--danger);font-weight:700;padding:5px 12px;border-radius:99px;font-size:.85rem}
+/* ===== Visual refresh 3 ===== */
+.hello{display:flex;flex-direction:column;margin:-8px 4px 14px;line-height:1.3}
+.hello b{font-size:1.05rem}
+.hello span{color:var(--muted);font-size:.85rem}
+.nm{display:flex;align-items:center;gap:10px;min-width:0}
+.av{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:.82rem;letter-spacing:.02em;background:color-mix(in srgb,var(--ac,var(--brand)) 16%,transparent);color:var(--ac,var(--brand))}
+.card:has(.pill.New){--ac:var(--new)}
+.card:has(.pill.progress){--ac:var(--prog)}
+.card:has(.pill.Onboarded),.card:has(.pill.Client){--ac:var(--done)}
+.card:has(.pill.Inquiry){--ac:var(--new)}
+.card:has(.pill.Cold){--ac:var(--muted)}
+.card:has(.pill.Warm){--ac:var(--prog)}
+.card:has(.pill.Hot){--ac:var(--danger)}
+.card.cl{display:flex;align-items:center;gap:12px;padding:12px 14px}
+.cmid{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.card.cl .name{max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.more{margin-top:18px;border-top:1px solid var(--line)}
+.more summary{cursor:pointer;font-weight:700;color:var(--muted);padding:14px 4px;list-style:none;display:flex;align-items:center;justify-content:space-between}
+.more summary::-webkit-details-marker{display:none}
+.more summary::after{content:"+";font-size:1.4rem;font-weight:500}
+.more[open] summary::after{content:"\2013"}
+#lstats{grid-template-columns:repeat(6,1fr)!important}
+#lstats .stat{grid-column:span 2}
+
+#mainv,#leadsv{animation:fadein .28s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.stat b,.cat .cnt,.tot b{font-variant-numeric:tabular-nums}
+#ck{border-radius:99px;padding:13px 18px;box-shadow:var(--shadow)}
+#ckr{display:flex;flex-direction:column;gap:10px;margin:10px 0 16px}
+#ckr:empty{margin:0}
+#ckr+.sec,#ck+.sec{margin-top:20px}
+.dash+.sec{margin-top:20px}
+.lno{flex:none;font-size:.72rem;font-weight:800;color:var(--muted);background:color-mix(in srgb,var(--muted) 14%,transparent);padding:2px 8px;border-radius:99px}
+.card{position:relative}
+.card>.lchk{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:22px;height:22px;padding:0}
+.card:has(>.lchk){padding-left:50px}
+.card.sel{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand),var(--shadow)}
+.selbar{position:sticky;top:8px;z-index:6;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:12px;margin-top:10px;box-shadow:var(--shadow)}
+.pill.Manual{color:var(--brand)}
+.card:has(.pill.Manual){--ac:var(--brand);border-left-color:var(--brand)}
+.stat[data-s="Manual entry"]{border-top:3px solid var(--brand)}
+</style>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0b7a5c">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+</head>
+<body>
+<main id="mainv">
+  <div class="hd"><div class="brand"><div class="logo" aria-hidden="true">NC</div><h1>NASRU’S CLIENTS</h1></div><button class="btn lb" id="lb">Leads</button></div>
+  <div class="hello" id="hello"></div>
+  <section class="dash" id="dash" aria-label="Monthly onboarding target">
+    <div class="row"><button class="mnav" id="mp" aria-label="Previous month">‹</button><b id="mt"></b><button class="mnav" id="mn" aria-label="Next month">›</button></div>
+    <div id="dcats"></div>
+    
+    
+    <div class="btns" style="margin-top:8px"><button class="btn" id="tg">Set targets</button><button class="btn p" id="qa">+ Walk-ins</button></div>
+    <div id="tgw" hidden style="margin-top:8px"><label for="tg2">2-WHEELER monthly target</label><input id="tg2" type="number" inputmode="numeric" min="1"><label for="tg3" style="margin-top:8px">3-WHEELER monthly target</label><input id="tg3" type="number" inputmode="numeric" min="1"><div class="btns"><button class="btn p" id="tgs">Save targets</button></div></div>
+  <div id="qaw" hidden style="margin-top:8px"><div class="sub" style="margin-bottom:8px">For clients who came without giving details, added to the month shown above. Enter numbers only. They count toward this month's dashboard only and are not added to the client list. To fix a mistake, type a minus number, like -1.</div><label for="q2">2-WHEELER clients</label><input id="q2" type="text" inputmode="text" placeholder="0"><label for="q3" style="margin-top:8px">3-WHEELER clients</label><input id="q3" type="text" inputmode="text" placeholder="0"><div class="btns"><button class="btn p" id="qas">Add to onboarded</button></div></div>
+  </section>
+  <div class="sec">Who is calling? Check a number</div>
+  <input id="ck" type="tel" inputmode="tel" placeholder="Type or paste a phone number" aria-label="Check a number" autocomplete="off">
+  <div id="ckr"></div>
+  <div class="sec">Client pipeline</div>
+  <div class="stats" id="stats"></div>
+  <button class="duebar" id="due" type="button" hidden></button>
+  <input id="q" type="search" placeholder="Search name, phone, location, asset" aria-label="Search customers">
+  <div class="list" id="list"></div>
+  <details class="more"><summary>Backup &amp; export</summary>
+  <p class="note">Saved on this phone only. Tap Save backup file below to keep a copy in your phone storage.</p>
+  <div class="btns" style="margin-top:8px"><button class="btn" id="sv2">Save backup file</button><button class="btn" id="csv">Save as CSV</button></div>
+  <div class="btns" style="margin-top:8px"><button class="btn" id="rs">Restore from file</button><button class="btn" id="exp">Share as text</button></div>
+  <input type="file" id="rf" accept=".json,application/json" hidden>
+  <p class="note" id="bm" style="margin-top:10px"></p>
+  </details>
+</main>
+<main id="leadsv" hidden>
+  <div class="hd"><div class="brand"><div class="logo" aria-hidden="true">NC</div><h1>LEADS</h1></div><button class="btn lb" id="lback">Back</button></div>
+  <div class="sec">Lead pipeline</div>
+  <div class="stats" id="lstats" style="grid-template-columns:repeat(3,1fr)"></div>
+  <input id="lq" type="search" placeholder="Search name, number, region, district" aria-label="Search leads">
+  <div class="btns" style="margin-top:8px"><button class="btn" id="lx">Export to Excel</button><button class="btn" id="li">Import from Excel</button></div>
+  <div class="btns" style="margin-top:8px"><button class="btn" id="lsel">Select leads</button></div>
+  <div class="selbar" id="lbar" hidden>
+    <b id="lcnt">0 selected</b>
+    <div class="btns" style="margin-top:8px"><button class="btn" id="lall">Select all shown</button><button class="btn" id="lclr">Clear</button></div>
+    <div class="btns" style="margin-top:8px"><button class="btn d" id="ldelsel">Delete selected</button><button class="btn" id="ldone">Done</button></div>
+    <div id="lbp" hidden style="margin-top:10px">
+      <label for="lbpi" id="lbpl">Enter password</label>
+      <input id="lbpi" type="password" autocomplete="off">
+      <div class="sub" id="lbm" style="margin:4px 0"></div>
+      <div class="btns"><button class="btn d" id="lbok">Confirm delete</button></div>
+    </div>
+  </div>
+  <div class="dash" id="liw" hidden style="margin-top:10px">
+    <div class="sub" style="margin-bottom:8px">Choose an Excel (.xlsx) or CSV file. Columns are matched by their headings (Date, Name of customer, Customer number, Region, District, Location, Asset description, Name of sales officer, Leads source, Leads type). Each lead keeps the date from your file.</div>
+    <div class="btns"><button class="btn" id="lipick">Choose file</button></div>
+    <input type="file" id="imf" accept=".xlsx,.csv,.xls" hidden>
+    <div class="sub" id="lipv" style="margin-top:10px"></div>
+    <div class="btns"><button class="btn p" id="lidoit" hidden>Import leads</button></div>
+  </div>
+  <div class="dash" id="lxw" hidden style="margin-top:10px">
+    <div class="sub" style="margin-bottom:8px">Choose a date range, or leave it blank to include every lead.</div>
+    <div style="display:flex;gap:8px"><div style="flex:1;min-width:0"><label for="xf">Date from</label><input id="xf" type="date"></div><div style="flex:1;min-width:0"><label for="xt">Date to</label><input id="xt" type="date"></div></div>
+    
+    
+    
+    <div class="sub" id="xnr" style="margin-top:10px;font-weight:650"></div>
+    <div style="display:flex;gap:8px;margin-top:6px"><div style="flex:1;min-width:0"><label for="xnf">From lead number</label><input id="xnf" type="number" inputmode="numeric" min="1"></div><div style="flex:1;min-width:0"><label for="xnt">To lead number</label><input id="xnt" type="number" inputmode="numeric" min="1"></div></div>
+    <label for="xfn" style="margin-top:8px">File name (you can rename it)</label><input id="xfn" autocomplete="off">
+    <div class="sub" id="xc" style="margin:10px 0 6px;font-weight:650"></div>
+    <div class="btns"><button class="btn p" id="xd">Download Excel</button></div>
+    <div class="sub" id="xm" style="margin-top:6px"></div>
+  </div>
+  <div class="list" id="llist"></div>
+</main>
+<button class="fab" id="ladd" hidden>+ Add lead</button>
+<button class="fab" id="add">+ Add customer</button>
+<button class="tot" id="tot" aria-label="Show onboarded totals by wheeler type"><span>Total onboarded</span><b id="totn">0</b></button>
+<div class="totp" id="totp" hidden><div class="row"><span>2-WHEELER onboarded</span><b id="t2">0</b></div><div class="row" style="margin-top:8px"><span>3-WHEELER onboarded</span><b id="t3">0</b></div><div class="row sub" id="tur" style="margin-top:8px" hidden><span>No category</span><b id="tun">0</b></div></div>
+
+<div class="toast" id="toast" hidden></div>
+<dialog id="dlg">
+  <form id="f" method="dialog" onsubmit="return false">
+    <h2 id="ft" style="margin:0 0 4px">Add customer</h2>
+    <fieldset id="fs">
+    <div><label for="n">Name</label><input id="n" required autocomplete="off"></div>
+    
+    
+    
+    <div><label for="p">Phone</label><input id="p" type="tel" inputmode="tel"><a class="btn" id="callb" href="#" hidden>Call this number</a><a class="btn" id="textb" href="#" hidden>Text this number</a><div class="sub" id="cm" hidden style="margin-top:4px"></div></div>
+    <div><label for="c">Location</label><input id="c"></div>
+    <div><label for="a">Asset description</label><select id="a"><option value="">Select asset</option><option>BOXER 125 HD</option><option>BOXER 125 X</option><option>BOXER 150 HD</option><option>BOXER 150 X</option><option>BAJAJ RE CNG</option></select></div>
+    <div><label for="s">Status</label><select id="s"><option>New</option><option>In progress</option><option>Onboarded</option></select></div>
+    <div id="odw" hidden><label for="od">Onboarded date</label><input id="od" type="date"></div>
+    
+    <div><label for="fd">Follow-up date</label><input id="fd" type="date"><a class="btn" id="remb" href="#" target="_blank" rel="noopener" hidden>Add reminder to calendar</a></div>
+    <div><label>Missing items (tick what is still missing)</label><div id="miss"></div></div>
+    <div><label for="nt">Notes</label><textarea id="nt" rows="3"></textarea></div>
+    </fieldset>
+    <div class="btns"><button type="button" class="btn" id="cx">Cancel</button><button type="button" class="btn p" id="ed" hidden>Edit</button><button type="button" class="btn p" id="sv">Save customer</button></div>
+    <div id="mvw" hidden style="border-top:1px solid var(--line);padding-top:12px">
+      <label for="mvt">Lost interest in buying? Move back to leads as</label>
+      <select id="mvt"><option>Inquiry</option><option selected>Cold</option><option>Warm</option><option>Hot</option></select>
+      <div class="btns"><button type="button" class="btn d" id="mvb">Move to leads</button></div>
+      <div id="mvp" hidden style="margin-top:10px">
+        <label for="mvpi" id="mvpl">Enter password</label>
+        <input id="mvpi" type="password" autocomplete="off">
+        <div class="sub" id="mvm" style="margin:4px 0"></div>
+        <div class="btns"><button type="button" class="btn d" id="mvok">Confirm move</button></div>
+      </div>
+    </div>
+    <div id="delw" hidden>
+      <div class="btns"><button type="button" class="btn d" id="dl">Delete customer</button></div>
+      <div id="pw" hidden style="margin-top:10px">
+        <label for="pwi" id="pwl">Delete password</label>
+        <input id="pwi" type="password" autocomplete="off">
+        <div class="sub" id="pwm" style="margin:4px 0"></div>
+        <div class="btns"><button type="button" class="btn d" id="pwok">Confirm delete</button></div>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="lwdlg">
+  <form method="dialog" onsubmit="return false" style="padding:22px 20px 20px">
+    <div class="lwh">Some details are empty</div>
+    <div class="sub">These fields are blank on this lead. You can fill them in now, or save it as it is.</div>
+    <ul id="lwl"></ul>
+    <div class="btns"><button type="button" class="btn" id="lwfix">Fill them in</button><button type="button" class="btn p" id="lwgo">Save anyway</button></div>
+  </form>
+</dialog>
+<dialog id="ldlg">
+  <form method="dialog" onsubmit="return false">
+    <h2 id="lft" style="margin:0 0 4px">Add lead</h2>
+    <div><label for="ld">Date</label><input id="ld" type="date"></div>
+    <div><label for="ln">Name of customer</label><input id="ln" autocomplete="off"></div>
+    
+    
+    
+    <div><label for="lp">Customer number</label><input id="lp" type="tel" inputmode="tel"><a class="btn" id="lcall" href="#" hidden>Call this number</a><a class="btn" id="ltext" href="#" hidden>Text this number</a></div>
+    <div><label for="lr">Region</label><select id="lr"></select></div>
+    <div><label for="ldi">District</label><select id="ldi" disabled></select></div>
+    <div><label for="ll">Location (ward)</label><select id="ll" disabled></select><input id="llo" placeholder="Type the location" autocomplete="off" hidden style="margin-top:8px"></div>
+    <div><label for="la">Asset description</label><select id="la"><option value="">Select asset</option><option>BOXER 125 HD</option><option>BOXER 125 X</option><option>BOXER 150 HD</option><option>BOXER 150 X</option><option>BAJAJ RE CNG</option></select></div>
+    <div><label for="lo">Name of sales officer</label><input id="lo" autocomplete="off"></div>
+    <div><label for="ls">Leads source</label><select id="ls"><option value="">Select source</option><option>Mo Finance Team</option><option>Road Show</option><option>Bajaj Service Centre</option><option value="__other">Other (type it)</option></select><input id="lso" placeholder="Type the source" autocomplete="off" hidden style="margin-top:8px"></div>
+    <div><label for="lt">Leads type</label><select id="lt"><option>Inquiry</option><option>Cold</option><option>Warm</option><option>Hot</option><option>Manual entry</option></select><div class="sub" id="ltn" hidden style="margin-top:4px">Status: Already client (this client is onboarded).</div></div>
+    <div class="btns"><button type="button" class="btn" id="lcx">Cancel</button><button type="button" class="btn p" id="lsv">Save lead</button></div>
+    <div id="latw" hidden style="border-top:1px solid var(--line);padding-top:12px">
+      <label>Actual time entered</label>
+      <div class="sub" id="latv" style="margin-bottom:6px"></div>
+      <div class="btns"><button type="button" class="btn" id="lat">Show actual time</button></div>
+      <div id="latp" hidden style="margin-top:8px">
+        <label for="latpi" id="latpl">Enter password</label>
+        <input id="latpi" type="password" autocomplete="off">
+        <div class="sub" id="latm" style="margin:4px 0"></div>
+        <div class="btns"><button type="button" class="btn p" id="latok">Unlock</button></div>
+      </div>
+    </div>
+    <div id="lcvw" hidden style="border-top:1px solid var(--line);padding-top:12px">
+      <label for="lcs">Make this lead a client</label>
+      <select id="lcs"><option value="New">New</option><option value="In progress">In progress (processing)</option><option value="Onboarded">Onboarded</option></select>
+      <div class="btns"><button type="button" class="btn p" id="lcv">Add to clients</button></div>
+      <div class="sub" id="lcm" style="margin-top:6px"></div>
+    </div>
+    <div id="ldelw" hidden>
+      <div class="btns"><button type="button" class="btn d" id="ldl">Delete lead</button></div>
+      <div id="lpw" hidden style="margin-top:10px">
+        <label for="lpwi" id="lpwl">Delete password</label>
+        <input id="lpwi" type="password" autocomplete="off">
+        <div class="sub" id="lpm" style="margin:4px 0"></div>
+        <div class="btns"><button type="button" class="btn d" id="lpok">Confirm delete</button></div>
+      </div>
+    </div>
+  </form>
+</dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+<script>
+(function(){
+  var KEY="customer-tracker-v1", data=[], filter="", editId=null;
+  function load(){try{var r=localStorage.getItem(KEY);data=r?JSON.parse(r):[]}catch(e){data=[]}data.forEach(function(c){if(c){if(c.name)c.name=String(c.name).toUpperCase();delete c.nidaName;delete c.nin;delete c.verified}})}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(data))}catch(e){alert("Could not save. Your browser may be blocking storage.")}}
+  function $(i){return document.getElementById(i)}
+  function esc(s){return String(s||"").replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  var ST=["New","In progress","Onboarded"];
+  function today(){var d=new Date();return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2)}
+  function followHtml(f){var t=today(),p=f.split("-"),l=new Date(+p[0],+p[1]-1,+p[2]).toLocaleDateString(undefined,{day:"numeric",month:"short"});
+    if(f<t)return '<div class="sub due">Follow up: '+l+' (overdue)</div>';
+    if(f===t)return '<div class="sub today">Follow up: today</div>';
+    return '<div class="sub">Follow up: '+l+'</div>'}
+  function render(){saveUi();
+    var h="";
+    ST.forEach(function(s){var n=data.filter(function(c){return c.status===s&&((mOff===0&&s!=="Onboarded")||inM(c))}).length;
+      h+='<button class="stat'+(filter===s?' on':'')+'" data-s="'+s+'"><b>'+n+'</b><span>'+s+'</span></button>'});
+    $("stats").innerHTML=h;renderDash();ckRender();
+    var dn=data.filter(function(c){return c.follow&&c.status!=="Onboarded"&&c.follow<=today()}).length;
+    if(!dn)dueOnly=false;$("due").hidden=!dn;$("due").textContent=dueOnly?"Showing "+dn+" due or overdue follow-up"+(dn===1?"":"s")+" \u2022 tap to show all":dn+(dn===1?" follow-up due or overdue":" follow-ups due or overdue")+"  \u203a";
+    var q=$("q").value.trim().toLowerCase();
+    if(!filter&&!dueOnly&&!q){$("list").innerHTML='<div class="empty">Tap <b>New</b>, <b>In progress</b> or <b>Onboarded</b> above to view your clients.</div>';return}
+    var rows=data.filter(function(c){
+      if(c.walkin)return false;if(dueOnly){if(!(c.follow&&c.status!=="Onboarded"&&c.follow<=today()))return false}else if(mOff<0&&!inM(c))return false;if(filter&&c.status!==filter)return false;
+      return !q||[c.name,c.phone,c.location||c.company,c.asset].join(" ").toLowerCase().indexOf(q)>-1;
+    }).sort(function(a,b){return dueOnly?(a.follow<b.follow?-1:a.follow>b.follow?1:0):b.added-a.added});
+    if(!rows.length){$("list").innerHTML='<div class="empty">'+(data.length?'No customers match.':'No customers yet. Tap “Add customer” to record your first one.')+'</div>';return}
+    $("list").innerHTML=rows.map(function(c){
+      return '<div class="card cl" data-id="'+c.id+'"><span class="av">'+ini(c.name)+'</span><div class="cmid"><span class="name">'+esc(c.name)+'</span><span class="pill '+c.status+'">'+c.status+'</span></div><button type="button" class="btn dbtn" data-id="'+c.id+'">Details</button>'
+      
+      
+      
+      
+      
+      +'</div>'}).join("");
+  }
+  function open(id){
+    editId=id;var c=data.filter(function(x){return x.id===id})[0]||{};
+    $("ft").textContent=id?"Edit customer":"Add customer";
+    $("n").value=c.name||"";$("p").value=c.phone||"";$("c").value=c.location||c.company||"";$("a").value=c.asset||"";setMiss(c.missing||[]);
+    $("s").value=c.status||"New";$("od").value=c.status==="Onboarded"?dstr(c.doneOn||c.added||Date.now()):"";setOd();$("fd").value=c.follow||"";$("nt").value=c.notes||"";
+    refreshLinks();resetDl();setMode(!id);$("dlg").showModal();
+  }
+  $("add").onclick=function(){open(null)};
+  $("cx").onclick=function(){$("dlg").close()};
+  function setMode(edit){
+    $("fs").disabled=!edit;
+    $("sv").hidden=!edit;
+    $("ed").hidden=edit;
+    $("cx").textContent=edit?"Cancel":"Close";
+    $("delw").hidden=!(edit&&editId);$("mvw").hidden=!editId;$("mvp").hidden=true;$("mvpi").value="";$("mvm").textContent="";
+    $("ft").textContent=!editId?"Add customer":(edit?"Edit customer":"Customer details");
+  }
+  $("ed").onclick=function(){resetDl();setMode(true)};
+  $("sv").onclick=function(){
+    var name=$("n").value.trim();if(!name){$("n").focus();return}
+    var rec={name:name.toUpperCase(),phone:$("p").value.trim(),location:$("c").value.trim(),asset:$("a").value,status:$("s").value,follow:$("fd").value,missing:getMiss(),notes:$("nt").value.trim()};
+    if(rec.status==="Onboarded"&&$("od").value)rec.doneOn=new Date($("od").value+"T12:00:00").getTime();
+    if(editId){data=data.map(function(c){return c.id===editId?Object.assign({},c,rec,rec.status==="Onboarded"&&c.status!=="Onboarded"&&!rec.doneOn?{doneOn:Date.now()}:{}):c})}
+    else{var dp=findDup(rec,null);if(dp){data=data.map(function(c){return c.id===dp.id?Object.assign({},c,rec,{id:c.id,added:c.added},rec.status==="Onboarded"&&c.status!=="Onboarded"&&!rec.doneOn?{doneOn:Date.now()}:{}):c});setTimeout(function(){toast("This client already exists, so I updated them instead of adding a duplicate.")},60)}else{rec.id="c"+Date.now();rec.added=Date.now();if(rec.status==="Onboarded"&&!rec.doneOn)rec.doneOn=rec.added;data.push(rec)}}
+    save();$("dlg").close();render();
+  };
+  var PK="customer-tracker-pw";
+  function getPw(){try{return localStorage.getItem(PK)}catch(e){return null}}
+  function setPw(h){try{localStorage.setItem(PK,h)}catch(e){}}
+  function hash(s){
+    if(window.crypto&&crypto.subtle&&window.TextEncoder){return crypto.subtle.digest("SHA-256",new TextEncoder().encode(s)).then(function(b){return Array.prototype.map.call(new Uint8Array(b),function(x){return("0"+x.toString(16)).slice(-2)}).join("")})}
+    return Promise.resolve("p"+s.split("").reduce(function(a,c){return(a*31+c.charCodeAt(0))|0},7));
+  }
+  function resetDl(){$("pw").hidden=true;$("pwi").value="";$("pwm").textContent=""}
+  function showPw(){var has=!!getPw();
+    $("pwl").textContent=has?"Enter delete password":"Create a delete password (needed every time you delete)";
+    $("pwok").textContent=has?"Confirm delete":"Save password and delete";
+    $("pw").hidden=false;$("pwi").focus()}
+  $("pwok").onclick=function(){
+    var v=$("pwi").value;
+    if(v.length<4){$("pwm").textContent="Use at least 4 characters.";return}
+    hash(v).then(function(h){
+      var cur=getPw();
+      if(!cur){setPw(h)}else if(cur!==h){$("pwm").textContent="Wrong password. Customer not deleted.";return}
+      data=data.filter(function(c){return c.id!==editId});save();$("dlg").close();render();
+    });
+  };
+  $("dl").onclick=function(){
+    if($("pw").hidden){showPw()}else{resetDl()}
+  };
+  $("list").onclick=function(e){if(e.target.closest("a"))return;var b=e.target.closest(".dbtn");if(b)open(b.getAttribute("data-id"))};
+  $("stats").onclick=function(e){var b=e.target.closest(".stat");if(!b)return;var s=b.getAttribute("data-s");filter=filter===s?"":s;render()};
+  $("due").onclick=function(){dueOnly=!dueOnly;if(dueOnly){filter="";$("q").value=""}render();if(dueOnly)$("list").scrollIntoView({behavior:"smooth",block:"start"})};
+  $("q").oninput=render;
+  $("exp").onclick=function(){
+    var t=data.map(function(c){return [c.name,c.phone,c.location||c.company,c.asset,c.status,c.follow,(c.missing||[]).join("; "),c.notes].map(function(v){return '"'+String(v||"").replace(/"/g,'""')+'"'}).join(",")});
+    t.unshift("Name,Phone,Location,Asset,Status,Follow-up,Missing,Notes");
+    var txt=t.join("\n");
+    if(navigator.share){navigator.share({title:"Customers backup",text:txt}).catch(function(){})}
+    else if(navigator.clipboard){navigator.clipboard.writeText(txt).then(function(){alert("Backup copied. Paste it into Notes or a Sheet.")},function(){alert(txt)})}
+    else{alert(txt)}
+  };
+  function setCall(){var v=$("p").value.replace(/[^\d+]/g,""),a=$("callb"),t=$("textb");a.hidden=!v;a.href=v?"tel:"+v:"#";t.hidden=!v;t.href=v?"sms:"+v:"#"}
+  function setRem(){
+    var fd=$("fd").value,a=$("remb");
+    if(!fd){a.hidden=true;return}
+    var p=fd.split("-"),d=new Date(+p[0],+p[1]-1,+p[2]),n=new Date(+p[0],+p[1]-1,+p[2]+1);
+    function f(x){return x.getFullYear()+("0"+(x.getMonth()+1)).slice(-2)+("0"+x.getDate()).slice(-2)}
+    var det=[$("p").value.trim()?"Call "+$("p").value.trim():"",$("a").value,$("c").value.trim()].filter(Boolean).join(" | ");
+    a.href="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent("Follow up: "+($("n").value.trim()||"customer"))+"&dates="+f(d)+"/"+f(n)+"&details="+encodeURIComponent(det);
+    a.hidden=false;
+  }
+  function refreshLinks(){setCall();setRem();$("cm").hidden=true}
+  ["n","p","c","a","fd"].forEach(function(i){$(i).addEventListener("input",refreshLinks);$(i).addEventListener("change",refreshLinks)});
+  function toast(t){
+    if($("dlg").open){$("cm").textContent=t;$("cm").hidden=false;return}
+    var el=$("toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(function(){el.hidden=true},6000);
+  }
+  function dial(num,sc){
+    var url=(sc||"tel")+":"+num,left=false,i=0;
+    function mark(){left=true}
+    window.addEventListener("blur",mark);document.addEventListener("visibilitychange",mark);
+    var steps=[
+      function(){window.top.location.href=url},
+      function(){var a=document.createElement("a");a.href=url;a.target="_top";document.body.appendChild(a);a.click();a.remove()},
+      function(){window.open(url,"_blank")}
+    ];
+    function fail(){
+    try{navigator.clipboard.writeText(num).then(function(){toast("Couldn't open "+(sc==="sms"?"Messages":"the dialer")+". Number copied: "+num)},function(){toast("Couldn't open "+(sc==="sms"?"Messages":"the dialer")+". Number: "+num)})}
+    catch(e){toast("Couldn't open "+(sc==="sms"?"Messages":"the dialer")+". Number: "+num)}
+    }
+    (function next(){
+      if(left||i>=steps.length){
+        window.removeEventListener("blur",mark);document.removeEventListener("visibilitychange",mark);
+        if(!left)fail();
+        return;
+      }
+      try{steps[i++]()}catch(e){}
+      setTimeout(next,800);
+    })();
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("a.call,#callb,#lcall,#textb,#ltext");
+    if(!a||!window.claude)return;
+    e.preventDefault();e.stopPropagation();
+    var href=a.getAttribute("href")||"",sc=href.indexOf("sms:")===0?"sms":"tel",num=href.replace(/^(tel|sms):/,"");
+    if(num&&num!=="#")dial(num,sc);
+  },true);
+  var MISS=["TIN CERTIFICATE","NATIONAL ID","GUARANTOR","GUARANTOR’S ID","DRIVING LICENSE","LGA’S LETTER"];
+  $("miss").innerHTML=MISS.map(function(m){return '<label class="chk"><input type="checkbox" value="'+esc(m)+'"> '+esc(m)+'</label>'}).join("");
+  function getMiss(){return Array.prototype.map.call($("miss").querySelectorAll("input:checked"),function(x){return x.value})}
+  function setMiss(a){Array.prototype.forEach.call($("miss").querySelectorAll("input"),function(x){x.checked=a.indexOf(x.value)>-1})}
+  var mOff=0,dueOnly=false,TK="customer-tracker-target";
+  function getT(k,mk){try{var v=parseInt(localStorage.getItem(TK+"-"+k+"-"+mk),10);if(v>0)return v;v=parseInt(localStorage.getItem(TK+"-"+k),10);return v>0?v:10}catch(e){return 10}}
+  function mRange(){var n=new Date(),f=new Date(n.getFullYear(),n.getMonth()+mOff,1),x=new Date(f.getFullYear(),f.getMonth()+1,1);return{f:f.getTime(),x:x.getTime(),key:f.getFullYear()+("0"+(f.getMonth()+1)).slice(-2)}}
+  function cDate(c){return c.status==="Onboarded"?(c.doneOn||c.added||0):(c.added||0)}
+  function inM(c){var r=mRange(),t=cDate(c);return t>=r.f&&t<r.x}
+  function dstr(ts){var d=new Date(ts);return d.getFullYear()+"-"+("0"+(d.getMonth()+1)).slice(-2)+"-"+("0"+d.getDate()).slice(-2)}
+  function setOd(){var on=$("s").value==="Onboarded";$("odw").hidden=!on;if(on&&!$("od").value)$("od").value=today()}
+  $("s").addEventListener("change",setOd);
+  function setT(k,v,mk){try{localStorage.setItem(TK+"-"+k+"-"+mk,String(v));if(mOff===0)localStorage.setItem(TK+"-"+k,String(v))}catch(e){}}
+  var CATS=[{k:"2w",n:"2-WHEELER"},{k:"3w",n:"3-WHEELER"}];
+  function catOf(c){var a=String(c.asset||"").toUpperCase();if(a.indexOf("BOXER")===0)return"2w";if(a.indexOf("BAJAJ RE")===0)return"3w";return c.cat||""}
+  function renderDash(){
+    var now=new Date(),first=new Date(now.getFullYear(),now.getMonth()+mOff,1),next=new Date(first.getFullYear(),first.getMonth()+1,1);
+    var days=Math.round((next-first)/864e5),d=now.getDate(),html="";
+    $("mt").textContent=first.toLocaleDateString(undefined,{month:"long",year:"numeric"});
+    CATS.forEach(function(ct){
+      var cnt=data.filter(function(c){if(c.status!=="Onboarded"||catOf(c)!==ct.k)return false;var t=c.doneOn||c.added||0;return t>=first.getTime()&&t<next.getTime()}).length;
+      var g=getT(ct.k,mRange().key),pct=Math.round(cnt/g*100),info,low;
+      if(mOff===0){
+        var left=days-d+1,togo=Math.max(0,g-cnt),ok=cnt>=g||cnt/g>=d/days-0.1;
+        info=cnt>=g?"Target reached! "+pct+"% of target":pct+"% of target \u2022 "+togo+" to go \u2022 "+left+" day"+(left===1?"":"s")+" left \u2022 "+(ok?"On track":"Behind pace");
+        low=!ok;
+      }else{
+        info=(mOff<0?"Final: ":"")+pct+"% of target";
+        low=cnt<g;
+      }
+      html+='<div class="cat"><div class="row"><b>'+ct.n+'</b><span class="cnt">'+cnt+'<span class="sub"> / '+g+'</span></span></div><div class="bar" style="margin-top:6px"><div class="fill'+(low?' low':'')+'" style="width:'+Math.min(100,pct)+'%"></div></div><div class="sub" style="margin-top:6px">'+info+'</div></div>';
+    });
+    var ob=data.filter(function(c){return c.status==="Onboarded"}),n2=ob.filter(function(c){return catOf(c)==="2w"}).length,n3=ob.filter(function(c){return catOf(c)==="3w"}).length;
+    $("totn").textContent=ob.length;$("t2").textContent=n2;$("t3").textContent=n3;$("tun").textContent=ob.length-n2-n3;$("tur").hidden=ob.length===n2+n3;
+    
+    $("dcats").innerHTML=html;$("mn").disabled=mOff>=0;
+  }
+  $("qa").onclick=function(){var w=$("qaw");w.hidden=!w.hidden;$("tgw").hidden=true;if(!w.hidden){$("q2").value="";$("q3").value="";$("q2").focus()}};
+  $("qas").onclick=function(){
+    var a=Math.min(100,Math.max(-100,parseInt($("q2").value,10)||0)),b=Math.min(100,Math.max(-100,parseInt($("q3").value,10)||0));
+    if(!a&&!b){$("q2").focus();return}
+    var R=mRange(),t=mOff<0?R.f+14*864e5:Date.now();
+    function mk(k,n,label){
+      if(n<0){var rem=-n;for(var j=data.length-1;j>=0&&rem>0;j--){if(data[j].walkin&&data[j].cat===k&&data[j].doneOn>=R.f&&data[j].doneOn<R.x){data.splice(j,1);rem--}}return}
+      for(var i=0;i<n;i++){t++;data.push({id:"w"+Date.now()+Math.random().toString(36).slice(2,7)+k+i,name:"Walk-in client ("+label+")",status:"Onboarded",cat:k,walkin:true,added:t,doneOn:t})}
+    }
+    mk("2w",a,"2-WHEELER");mk("3w",b,"3-WHEELER");
+    save();$("qaw").hidden=true;render();
+    toast("Dashboard updated ("+(a+b>0?"+":"")+(a+b)+").");
+  };
+  var LK="customer-tracker-leads-v1",leads=[],lFilter="",lEdit=null,LT=["Inquiry","Cold","Warm","Hot","Manual entry"];
+  function isCl(l){return !!(l.clientId&&data.some(function(c){return c.id===l.clientId&&c.status==="Onboarded"}))}
+  function lStat(l){return isCl(l)?"Already client":l.type}
+  function leadNums(){var s=leads.slice().sort(function(a,b){return (a.date||"").localeCompare(b.date||"")||(a.created||0)-(b.created||0)}),m={};s.forEach(function(l,i){m[l.id]=i+1});return m}
+  function loadL(){try{var r=localStorage.getItem(LK);leads=r?JSON.parse(r):[]}catch(e){leads=[]}leads.forEach(function(l){if(l){delete l.nidaName;delete l.nin;delete l.verified}})}
+  function saveL(){try{localStorage.setItem(LK,JSON.stringify(leads))}catch(e){toast("Could not save. Your browser may be blocking storage.")}}
+  function showView(v){var L=v==="leads";$("mainv").hidden=L;$("leadsv").hidden=!L;$("add").hidden=L;$("tot").hidden=L;$("totp").hidden=true;$("ladd").hidden=!L;window.scrollTo(0,0);if(L)renderL();saveUi()}
+  $("lb").onclick=function(){showView("leads")};
+  $("lback").onclick=function(){showView("main")};
+  function renderL(){saveUi();var nums=leadNums();
+    var h="";
+    LT.concat(["Already client"]).forEach(function(t){var n=leads.filter(function(l){return lStat(l)===t}).length;h+='<button class="stat'+(lFilter===t?' on':'')+'" data-s="'+t+'"><b>'+n+'</b><span>'+t+'</span></button>'});
+    $("lstats").innerHTML=h;
+    var q=$("lq").value.trim().toLowerCase();
+    var rows=leads.filter(function(l){if(lFilter&&lStat(l)!==lFilter)return false;return !q||[l.name,l.phone,l.region,l.district,l.location,l.asset,l.officer,l.source,"#"+nums[l.id]].join(" ").toLowerCase().indexOf(q)>-1}).sort(function(a,b){return (b.date||"").localeCompare(a.date||"")||(b.created||0)-(a.created||0)});
+    shownIds=rows.map(function(l){return l.id});selUi();
+    if(!rows.length){$("llist").innerHTML='<div class="empty">'+(leads.length?'No leads match.':'No leads yet. Tap “Add lead” to record your first one.')+'</div>';return}
+    $("llist").innerHTML=rows.map(function(l){
+      return '<div class="card'+(selMode&&sel[l.id]?' sel':'')+'" role="button" tabindex="0" data-id="'+l.id+'">'+(selMode?'<input type="checkbox" class="lchk" data-id="'+l.id+'"'+(sel[l.id]?' checked':'')+'>':'')+'<div class="row"><span class="nm"><span class="av">'+ini(l.name)+'</span><span class="name">'+esc(l.name)+'</span><span class="lno">#'+nums[l.id]+'</span></span><span class="pill '+(isCl(l)?'Client':l.type)+'">'+(isCl(l)?'Already client':l.type)+'</span></div>'
+      +'<div class="sub">Date set: '+esc(l.date||"")+(l.date?' \u2022 '+dago(l.date):'')+'</div>'+(l.asset?'<div class="sub">'+esc(l.asset)+'</div>':'')
+      +(l.phone?'<div class="sub"><a class="call" href="tel:'+esc(String(l.phone).replace(/[^\d+]/g,""))+'">Call '+esc(l.phone)+'</a> &nbsp;&bull;&nbsp; <a class="call" href="sms:'+esc(String(l.phone).replace(/[^\d+]/g,""))+'">Text</a></div>':'')
+      +(l.region||l.district||l.location?'<div class="sub">'+esc([l.region,l.district,l.location].filter(Boolean).join(" \u2022 "))+'</div>':'')
+      +(l.officer?'<div class="sub">Officer: '+esc(l.officer)+'</div>':'')
+      +(l.source?'<div class="sub">Source: '+esc(l.source)+'</div>':'')
+      +(l.converted?'<div class="sub">In clients: '+esc(l.converted)+'</div>':'')
+      +'<div class="row" style="margin-top:8px"><span></span><button type="button" class="btn dbtn cbtn" data-id="'+l.id+'">'+(l.converted?'Update client':'Make client')+'</button></div></div>'}).join("");
+  }
+  function rank(s){return s==="Onboarded"?3:s==="In progress"?2:1}
+  function sameC(a,b){var pa=String(a.phone||"").replace(/\D/g,""),pb=String(b.phone||"").replace(/\D/g,"");return !a.walkin&&!b.walkin&&String(a.name||"").trim().toUpperCase()===String(b.name||"").trim().toUpperCase()&&(!pa||!pb||pa===pb)}
+  function findDup(rec,exceptId){return data.filter(function(c){return c.id!==exceptId&&sameC(c,rec)})[0]}
+  function dedupe(){
+    var out=[],removed=0,map={};
+    data.forEach(function(c){
+      var m=null;for(var i=0;i<out.length;i++){if(sameC(out[i],c)){m=out[i];break}}
+      if(!m){out.push(c);return}
+      removed++;map[c.id]=m.id;
+      if(rank(c.status)>rank(m.status)){m.status=c.status;if(c.doneOn)m.doneOn=c.doneOn}
+      ["phone","location","asset","follow","notes"].forEach(function(k){if(!m[k]&&c[k])m[k]=c[k]});
+      if(m.status==="Onboarded"&&!m.doneOn)m.doneOn=c.doneOn||m.added;
+    });
+    if(removed){data=out;leads.forEach(function(l){if(l.clientId&&map[l.clientId])l.clientId=map[l.clientId]});save();saveL()}
+    return removed;
+  }
+  
+  
+  
+  
+  function getOff(){try{return localStorage.getItem("customer-tracker-officer")||""}catch(e){return ""}}
+  function setOff(v){try{if(v)localStorage.setItem("customer-tracker-officer",v)}catch(e){}}
+  var S=function(s){return s.split(",")};
+  var GEO={
+    "Dar es Salaam":{
+      "Ilala":S("Bonyokwa,Buguruni,Buyuni,Chanika,Gerezani,Gongolamboto,Ilala,Jangwani,Kariakoo,Kimanga,Kinyerezi,Kipawa,Kipunguni,Kisukuru,Kisutu,Kitunda,Kivukoni,Kivule,Kiwalani,Liwiti,Majohe,Mchafukoge,Mchikichini,Minazi Mirefu,Mnyamani,Msongola,Mzinga,Pugu,Pugu Station,Segerea,Tabata,Ukonga,Upanga East,Upanga West,Vingunguti,Zingiziwa"),
+      "Kigamboni":S("Kibada,Kigamboni,Kimbiji,Kisarawe II,Mjimwema,Pemba Mnazi,Somangira,Tungi,Vijibweni"),
+      "Kinondoni":S("Bunju,Hananasif,Kawe,Kigogo,Kijitonyama,Kinondoni,Kunduchi,Mabwepande,Magomeni,Makongo,Makumbusho,Mbezi Juu,Mbweni,Mikocheni,Msasani,Mwananyamala,Mzimuni,Ndugumbi,Tandale,Wazo"),
+      "Temeke":S("Azimio,Buza,Chamazi,Chang\u2019ombe,Charambe,Keko,Kibondemaji,Kijichi,Kilakala,Kiburugwa,Kilungule,Kurasini,Makangarawe,Mbagala,Mbagala Kuu,Mianzini,Miburani,Mtoni,Sandali,Tandika,Temeke,Toangoma,Yombo Vituka"),
+      "Ubungo":S("Goba,Kibamba,Kimara,Kwembe,Mabibo,Makuburi,Makurumla,Manzese,Mbezi,Mburahati,Msigani,Saranga,Sinza,Ubungo")
+    },
+    "Pwani":{
+      "Bagamoyo":S("Dunda,Fukayosi,Kerege,Kiromo,Kisutu,Magomeni,Makurunge,Mapinga,Nianjema,Yombo,Zinga"),
+      "Chalinze":S("Bwilingu,Kibindu,Kimange,Kiwangwa,Lugoba,Mandera,Mbwewe,Miono,Mkange,Msata,Msoga,Pera,Talawanda,Ubenazomozi,Vigwaza"),
+      "Kibaha":S("Bokomnemela,Dutumi,Gwata,Janga,Kawawa,Kikongo,Kilangalanga,Kwala,Magindu,Mlandizi,Mtambani,Mtongani,Ruvu,Soga"),
+      "Kibaha Town":S("Kibaha,Kongowe,Mailimoja,Mbwawa,Misugusugu,Mkuza,Msangani,Pangani,Picha ya Ndege,Sofu,Tangini,Tumbi,Visiga,Viziwaziwa"),
+      "Kibiti":S("Bungu,Dimani,Kibiti,Kiongoroni,Mahege,Maparoni,Mbuchi,Mchukwi,Mjawa,Mlanzi,Msala,Mtawanya,Mtunda,Mwambao,Ruaruke,Salale"),
+      "Kisarawe":S("Boga,Cholesamvula,Kazimzumbwi,Kibuta,Kiluvya,Kisarawe,Kurui,Mafizi,Maneromango,Marui,Marumbo,Masaki,Msanga,Msimbu,Mzenga,Vihingo,Vikumbulu"),
+      "Mafia":S("Baleni,Jibondo,Kanga,Kiegeani,Kilindoni,Kirongwe,Miburani,Ndagoni"),
+      "Mkuranga":S("Beta,Bupu,Dondo,Kimanzichana,Kiparang\u2019anda,Kisegese,Kisiju,Kitomondo,Lukanga,Magawa,Mbezi,Mipeko,Mkamba,Mkuranga,Msonga,Mwalusembe,Mwandege,Njia Nne,Nyamato,Panzuo,Shungubweni,Tambani,Tengelea"),
+      "Rufiji":S("Chemchem,Chumbi,Ikwiriri,Kipugira,Mbwara,Mgomba,Mkongo,Mohoro,Mwaseni,Ngarambe,Ngorongo,Umwe,Utete")
+    }
+  };
+  function gOpts(sel,arr,ph){sel.innerHTML='<option value="">'+ph+'</option>'+arr.map(function(x){return '<option>'+esc(x)+'</option>'}).join("")}
+  function geoDistricts(r,keep){
+    var d=GEO[r]?Object.keys(GEO[r]):[];
+    gOpts($("ldi"),d,"Select district");$("ldi").disabled=!r;
+    if(keep&&d.indexOf(keep)<0)$("ldi").insertAdjacentHTML("beforeend","<option>"+esc(keep)+"</option>");
+  }
+  function geoWards(r,d){
+    var w=(GEO[r]&&GEO[r][d])||[];
+    gOpts($("ll"),w,"Select location (ward)");
+    $("ll").insertAdjacentHTML("beforeend",'<option value="__other">Other (type it)</option>');
+    $("ll").disabled=!d;
+  }
+  function setGeo(r,d,l){
+    gOpts($("lr"),Object.keys(GEO),"Select region");
+    if(r&&!GEO[r])$("lr").insertAdjacentHTML("beforeend","<option>"+esc(r)+"</option>");
+    $("lr").value=r;
+    geoDistricts(r,d);$("ldi").value=d;
+    geoWards(r,d);
+    var w=(GEO[r]&&GEO[r][d])||[];
+    if(l&&w.indexOf(l)<0){$("ll").value="__other";$("llo").value=l}else{$("ll").value=l;$("llo").value=""}
+    $("llo").hidden=$("ll").value!=="__other";
+  }
+  function getLoc(){var v=$("ll").value;return v==="__other"?$("llo").value.trim():v}
+  $("lr").onchange=function(){geoDistricts($("lr").value,"");$("ldi").value="";geoWards($("lr").value,"");$("llo").hidden=true;$("llo").value=""};
+  $("ldi").onchange=function(){geoWards($("lr").value,$("ldi").value);$("llo").hidden=true;$("llo").value=""};
+  $("ll").onchange=function(){var o=$("ll").value==="__other";$("llo").hidden=!o;if(o)$("llo").focus()};
+  function lcallSet(){var v=$("lp").value.replace(/[^\d+]/g,""),a=$("lcall"),t=$("ltext");a.hidden=!v;a.href=v?"tel:"+v:"#";t.hidden=!v;t.href=v?"sms:"+v:"#"}
+  $("lp").addEventListener("input",lcallSet);
+  function openL(id){
+    lEdit=id;var l=leads.filter(function(x){return x.id===id})[0]||{};
+    $("lft").textContent=id?"Edit lead #"+leadNums()[id]:"Add lead";
+    $("ld").value=l.date||today();$("ln").value=l.name||"";$("lp").value=l.phone||"";setGeo(l.region||"",l.district||"",l.location||"");$("la").value=l.asset||"";$("lo").value=id?(l.officer||""):getOff();setSrc(l.source||"");$("lt").value=l.type||"Inquiry";
+    $("ltn").hidden=!isCl(l);$("latw").hidden=!id;$("latp").hidden=true;$("latpi").value="";$("latm").textContent="";$("latv").textContent="Hidden. Enter your password to view.";
+    $("ldelw").hidden=!id;$("lcvw").hidden=!id;$("lcm").textContent="";
+    var cc=!!(id&&l.clientId&&data.some(function(c){return c.id===l.clientId}));
+    $("lcv").textContent=cc?"Update client status":"Add to clients";$("lcs").value=cc?(l.converted||"New"):"New";
+    if(cc)$("lcm").textContent="Already in clients as "+(l.converted||"New")+".";$("lpw").hidden=true;$("lpwi").value="";$("lpm").textContent="";clearGaps();lcallSet();$("ldlg").showModal();
+  }
+  $("ladd").onclick=function(){openL(null)};
+  $("lcx").onclick=function(){$("ldlg").close()};
+  function saveLead(){
+    var name=$("ln").value.trim();if(!name){$("ln").focus();return}
+    var rec={date:$("ld").value||today(),name:name,phone:$("lp").value.trim(),region:$("lr").value.trim(),district:$("ldi").value.trim(),location:getLoc(),asset:$("la").value,officer:$("lo").value.trim(),source:getSrc(),type:$("lt").value};
+    setOff(rec.officer);
+    if(lEdit){leads=leads.map(function(l){return l.id===lEdit?Object.assign({},l,rec):l})}else{rec.id="l"+Date.now();rec.created=Date.now();leads.push(rec)}
+    saveL();$("ldlg").close();renderL();
+  };
+  function moveToLead(id,type){
+    var c=data.filter(function(x){return x.id===id})[0];if(!c)return;
+    var l=leads.filter(function(x){return x.clientId===id})[0];
+    if(l){l.type=type;delete l.clientId;delete l.converted}
+    else{leads.push({id:"l"+Date.now(),created:Date.now(),date:today(),name:c.name,phone:c.phone||"",region:"",district:"",location:c.location||"",asset:c.asset||"",officer:getOff(),source:"",type:type})}
+    data=data.filter(function(x){return x.id!==id});save();saveL();
+  }
+  $("mvb").onclick=function(){
+    var p=$("mvp");
+    if(p.hidden){var has=!!getPw();$("mvpl").textContent=has?"Enter password":"Create a password (also used for deleting)";$("mvok").textContent=has?"Confirm move":"Save password and move";p.hidden=false;$("mvpi").focus()}else{p.hidden=true}
+  };
+  $("mvok").onclick=function(){
+    var v=$("mvpi").value;
+    if(v.length<4){$("mvm").textContent="Use at least 4 characters.";return}
+    hash(v).then(function(h){
+      var cur=getPw();
+      if(!cur){setPw(h)}else if(cur!==h){$("mvm").textContent="Wrong password. Nothing was moved.";return}
+      var t=$("mvt").value;moveToLead(editId,t);$("dlg").close();render();renderL();
+      toast("Moved to leads as "+t+".");
+    });
+  };
+  function ini(n){var w=String(n||"?").trim().split(/\s+/).filter(Boolean);return esc(((w[0]||"?")[0]+(w[1]?w[1][0]:"")).toUpperCase())}
+  (function(){var d=new Date(),h=d.getHours(),g=h<12?"Good morning":h<17?"Good afternoon":"Good evening";$("hello").innerHTML='<b>'+g+'</b><span>'+d.toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"long"})+'</span>'})();
+  function dg(s){return String(s||"").replace(/\D/g,"")}
+  function ckRender(){
+    var raw=dg($("ck").value),out=$("ckr");
+    if(!raw){out.innerHTML="";return}
+    if(raw.length<5){out.innerHTML='<div class="sub">Keep typing the number\u2026</div>';return}
+    var t=raw.length>9?raw.slice(-9):raw,full=raw.length>=9,h="",n=0;
+    function hit(p){var d=dg(p);if(!d)return false;if(d.length>9)d=d.slice(-9);return full?d===t:d.indexOf(t)>-1}
+    data.forEach(function(c){
+      if(c.walkin||!hit(c.phone))return;n++;
+      h+='<div class="card ck"><div class="row"><span class="nm"><span class="av">'+ini(c.name)+'</span><span class="name">'+esc(c.name)+'</span></span><span class="pill '+c.status+'">'+c.status+'</span></div><div class="row" style="margin-top:8px"><span class="sub">Client</span><button type="button" class="btn dbtn ckb" data-k="c" data-id="'+c.id+'">Details</button></div></div>';
+    });
+    leads.forEach(function(l){
+      if(!hit(l.phone))return;n++;
+      var cl=isCl(l);
+      h+='<div class="card ck"><div class="row"><span class="nm"><span class="av">'+ini(l.name)+'</span><span class="name">'+esc(l.name)+'</span></span><span class="pill '+(cl?'Client':l.type)+'">'+(cl?'Already client':l.type)+'</span></div><div class="row" style="margin-top:8px"><span class="sub">Lead</span><button type="button" class="btn dbtn ckb" data-k="l" data-id="'+l.id+'">Details</button></div></div>';
+    });
+    if(!n)h='<div class="card ck"><div class="name">No lead or client has this number</div><div class="row" style="margin-top:8px"><span class="sub">This looks like a new person.</span><button type="button" class="btn p dbtn" id="cknew">Add as lead</button></div></div>';
+    out.innerHTML=h;
+  }
+  $("ck").addEventListener("input",ckRender);
+  $("ckr").onclick=function(e){
+    var b=e.target.closest(".ckb");
+    if(b){var id=b.getAttribute("data-id");if(b.getAttribute("data-k")==="c")open(id);else openL(id);return}
+    if(e.target.closest("#cknew")){var num=$("ck").value.trim();openL(null);$("lp").value=num;lcallSet()}
+  };
+  var UK="customer-tracker-ui",UI0=null,uiReady=false,scT=null;
+  try{UI0=JSON.parse(localStorage.getItem(UK)||"null")}catch(e){UI0=null}
+  function saveUi(){
+    if(!uiReady)return;
+    try{localStorage.setItem(UK,JSON.stringify({v:$("leadsv").hidden?"main":"leads",f:filter,lf:lFilter,m:mOff,d:dueOnly,q:$("q").value,lq:$("lq").value,y:window.pageYOffset||0}))}catch(e){}
+  }
+  function restoreUi(){
+    var s=UI0;
+    try{
+      if(s){
+        filter=s.f||"";lFilter=s.lf||"";mOff=Math.min(0,+s.m||0);dueOnly=!!s.d;
+        $("q").value=s.q||"";$("lq").value=s.lq||"";
+        render();renderL();
+        if(s.v==="leads")showView("leads");
+        setTimeout(function(){window.scrollTo(0,s.y||0)},80);
+      }
+    }catch(e){}
+    uiReady=true;saveUi();
+  }
+  window.addEventListener("scroll",function(){clearTimeout(scT);scT=setTimeout(saveUi,300)});
+  window.addEventListener("pagehide",saveUi);
+  document.addEventListener("visibilitychange",function(){if(document.hidden)saveUi()});
+  var selMode=false,sel={},shownIds=[];
+  function selCount(){return Object.keys(sel).length}
+  function selUi(){$("lbar").hidden=!selMode;$("lsel").hidden=selMode;var n=selCount();$("lcnt").textContent=n+" selected";$("ldelsel").disabled=!n}
+  $("lsel").onclick=function(){selMode=true;sel={};renderL()};
+  $("ldone").onclick=function(){selMode=false;sel={};$("lbp").hidden=true;$("lbpi").value="";$("lbm").textContent="";renderL()};
+  $("lclr").onclick=function(){sel={};renderL()};
+  $("lall").onclick=function(){shownIds.forEach(function(id){sel[id]=true});renderL()};
+  $("ldelsel").onclick=function(){
+    var n=selCount();if(!n)return;var p=$("lbp");
+    if(p.hidden){var has=!!getPw();$("lbpl").textContent=has?"Enter password to delete "+n+" lead"+(n===1?"":"s"):"Create a password (also used for other deletes)";$("lbok").textContent=has?"Confirm delete":"Save password and delete";p.hidden=false;$("lbpi").focus()}else{p.hidden=true}
+  };
+  $("lbok").onclick=function(){
+    var v=$("lbpi").value;
+    if(v.length<4){$("lbm").textContent="Use at least 4 characters.";return}
+    hash(v).then(function(h){
+      var cur=getPw();
+      if(!cur){setPw(h)}else if(cur!==h){$("lbm").textContent="Wrong password. Nothing was deleted.";return}
+      var n=selCount();
+      leads=leads.filter(function(l){return !sel[l.id]});saveL();
+      sel={};selMode=false;$("lbp").hidden=true;$("lbpi").value="";$("lbm").textContent="";
+      renderL();render();toast("Deleted "+n+" lead"+(n===1?"":"s")+".");
+    });
+  };
+  var MONTHS=["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"],liPending=[];
+  function lDate(v){
+    var y,m,d,s,a;
+    if(v instanceof Date){if(isNaN(v))return "";y=v.getUTCFullYear();m=v.getUTCMonth()+1;d=v.getUTCDate()}
+    else if(typeof v==="number"){if(v<20000||v>80000)return "";var t=new Date(Math.round((v-25569)*864e5));y=t.getUTCFullYear();m=t.getUTCMonth()+1;d=t.getUTCDate()}
+    else{
+      s=String(v||"").trim();
+      if((a=s.match(/^(\d{4})[-\/.](\d{1,2})[-\/.](\d{1,2})/))){y=+a[1];m=+a[2];d=+a[3]}
+      else if((a=s.match(/^(\d{1,2})[-\/.](\d{1,2})[-\/.](\d{2,4})/))){d=+a[1];m=+a[2];y=+a[3];if(m>12&&d<=12){var x=d;d=m;m=x}if(y<100)y+=2000}
+      else if((a=s.match(/^(\d{1,2})[\s-]+([A-Za-z]{3,9})[\s,.-]+(\d{2,4})/))){d=+a[1];m=MONTHS.indexOf(a[2].slice(0,3).toLowerCase())+1;y=+a[3];if(y<100)y+=2000}
+      else return "";
+    }
+    if(!(y>=2000&&y<=2100&&m>=1&&m<=12&&d>=1&&d<=31))return "";
+    return y+"-"+("0"+m).slice(-2)+"-"+("0"+d).slice(-2);
+  }
+  function lTxt(v){if(v==null)return "";if(v instanceof Date)return lDate(v)||"";if(typeof v==="number")return String(v);return String(v).trim()}
+  function normPhone(v){if(typeof v==="number")v=String(Math.round(v));var d=String(v||"").trim().replace(/[^\d+]/g,"");if(/^[67]\d{8}$/.test(d))d="0"+d;return d}
+  var ASSETMAP={BOXER125HD:"BOXER 125 HD",BOXER125X:"BOXER 125 X",BOXER150HD:"BOXER 150 HD",BOXER150X:"BOXER 150 X",BAJAJRECNG:"BAJAJ RE CNG",RECNG:"BAJAJ RE CNG"};
+  function normAsset(s){s=lTxt(s);return ASSETMAP[s.toUpperCase().replace(/[^A-Z0-9]/g,"")]||s}
+  function normType(s){var t=lTxt(s).toLowerCase();if(/manual/.test(t))return "Manual entry";if(/hot/.test(t))return "Hot";if(/warm/.test(t))return "Warm";if(/cold/.test(t))return "Cold";return "Inquiry"}
+  var LRULES=[["officer",/officer|salesperson|sales person|salesman|agent/],["source",/source/],["type",/\btype\b|status|temperature/],["asset",/asset|model|product|bike|vehicle|motorcycle/],["region",/region|mkoa/],["district",/district|wilaya/],["location",/location|ward|area|kata/],["phone",/phone|mobile|contact|number|simu|\btel\b/],["date",/date|tarehe/],["name",/name|customer|client|jina/]];
+  function liMap(row){
+    var col={},count=0,unused=[];
+    row.forEach(function(c,i){
+      var h=lTxt(c).toLowerCase().replace(/[^a-z0-9 ]+/g," ").replace(/\s+/g," ").trim();if(!h)return;
+      var ok=false;
+      for(var k=0;k<LRULES.length;k++){var f=LRULES[k][0];if(col[f]==null&&LRULES[k][1].test(h)){col[f]=i;count++;ok=true;break}}
+      if(!ok)unused.push(lTxt(c));
+    });
+    return {col:col,count:count,unused:unused};
+  }
+  function liKey(l){return (l.date||"")+"|"+String(l.name||"").trim().toLowerCase()+"|"+dg(l.phone)}
+  function liMsg(h,ok){$("lipv").innerHTML=h;$("lidoit").hidden=!ok}
+  function liProcess(rows,fname){
+    liPending=[];
+    var hi=-1,map=null,i;
+    for(i=0;i<Math.min(rows.length,10);i++){var m=liMap(rows[i]||[]);if(m.count>=2&&m.col.name!=null){hi=i;map=m;break}}
+    if(hi<0){liMsg('<b style="color:var(--danger)">Could not find the headings.</b> The first rows need headings such as Date, Name of customer and Customer number.',false);return}
+    var seen={},out=[],noName=0,dups=0,noDate=0,total=0,dmin="",dmax="";
+    leads.forEach(function(l){seen[liKey(l)]=1});
+    for(var r=hi+1;r<rows.length;r++){
+      var row=rows[r]||[],empty=true;
+      for(var q=0;q<row.length;q++){if(lTxt(row[q])!==""){empty=false;break}}
+      if(empty)continue;
+      total++;
+      var g=function(f){return map.col[f]!=null?row[map.col[f]]:""};
+      var name=lTxt(g("name"));
+      if(!name){noName++;continue}
+      var date=map.col.date!=null?lDate(g("date")):"";
+      if(!date){date=today();noDate++}
+      var rec={date:date,name:name,phone:normPhone(g("phone")),region:lTxt(g("region")),district:lTxt(g("district")),location:lTxt(g("location")),asset:normAsset(g("asset")),officer:lTxt(g("officer")),source:lTxt(g("source")),type:normType(g("type"))};
+      var key=liKey(rec);
+      if(seen[key]){dups++;continue}
+      seen[key]=1;
+      rec.id="l"+Date.now().toString(36)+out.length+Math.random().toString(36).slice(2,6);
+      rec.created=Date.now()+out.length;
+      out.push(rec);
+      if(!dmin||date<dmin)dmin=date;if(!dmax||date>dmax)dmax=date;
+    }
+    liPending=out;
+    var f2={date:"Date",name:"Name",phone:"Number",region:"Region",district:"District",location:"Location",asset:"Asset",officer:"Sales officer",source:"Source",type:"Type"},used=Object.keys(map.col).map(function(k){return f2[k]}).join(", ");
+    var h='<b>'+esc(fname)+'</b><br>'+total+' row'+(total===1?'':'s')+' read, <b>'+out.length+' lead'+(out.length===1?'':'s')+' ready to import</b>.';
+    if(dmin)h+='<br>Dates from <b>'+esc(dmin)+'</b> to <b>'+esc(dmax)+'</b>.';
+    h+='<br>Columns used: '+esc(used)+'.';
+    if(map.col.date==null)h+='<br><span style="color:var(--danger)">No Date column found, so today\'s date is used.</span>';
+    else if(noDate)h+='<br><span style="color:var(--danger)">'+noDate+' row'+(noDate===1?'':'s')+' had no readable date, so today\'s date is used.</span>';
+    if(noName)h+='<br>'+noName+' row'+(noName===1?'':'s')+' skipped (no customer name).';
+    if(dups)h+='<br>'+dups+' duplicate'+(dups===1?'':'s')+' skipped (already in your leads).';
+    if(map.unused.length)h+='<br>Not used: '+esc(map.unused.join(", "))+'.';
+    if(!out.length)h+='<br><b>Nothing new to import.</b>';
+    liMsg(h,out.length>0);
+    if(out.length&&$("lidoit"))$("lidoit").textContent="Import "+out.length+" lead"+(out.length===1?"":"s");
+  }
+  function parseCsv(t){
+    t=t.replace(/^\ufeff/,"");
+    var first=t.split(/\r?\n/)[0]||"",delim=",";
+    if((first.match(/;/g)||[]).length>(first.match(/,/g)||[]).length)delim=";";
+    if((first.match(/\t/g)||[]).length>(first.match(/,/g)||[]).length)delim="\t";
+    var rows=[],row=[],cur="",q=false,i,c;
+    for(i=0;i<t.length;i++){
+      c=t[i];
+      if(q){if(c==='"'){if(t[i+1]==='"'){cur+='"';i++}else q=false}else cur+=c}
+      else if(c==='"')q=true;
+      else if(c===delim){row.push(cur);cur=""}
+      else if(c==="\n"||c==="\r"){if(c==="\r"&&t[i+1]==="\n")i++;row.push(cur);cur="";rows.push(row);row=[]}
+      else cur+=c;
+    }
+    if(cur!==""||row.length){row.push(cur);rows.push(row)}
+    return rows;
+  }
+  function cellVal(v){
+    if(v==null)return "";
+    if(v instanceof Date)return v;
+    if(typeof v==="object"){
+      if(v.richText)return v.richText.map(function(p){return p.text}).join("");
+      if("result" in v)return cellVal(v.result);
+      if("text" in v)return cellVal(v.text);
+      if("error" in v)return "";
+    }
+    return v;
+  }
+  function liRead(f){
+    var nm=f.name||"file",ext=nm.slice(nm.lastIndexOf(".")).toLowerCase(),rd=new FileReader();
+    liMsg("Reading the file\u2026",false);
+    rd.onerror=function(){liMsg("Could not read that file.",false)};
+    if(ext===".csv"){rd.onload=function(){liProcess(parseCsv(String(rd.result)),nm)};rd.readAsText(f);return}
+    if(ext!==".xlsx"){liMsg('Please use an <b>.xlsx</b> file (in Excel: Save As, Excel Workbook) or a .csv file.',false);return}
+    if(!window.ExcelJS){liMsg("The Excel reader could not load (no internet). Save the file as CSV and choose that instead.",false);return}
+    rd.onload=function(){
+      var wb=new ExcelJS.Workbook();
+      wb.xlsx.load(rd.result).then(function(){
+        var ws=null;wb.worksheets.forEach(function(s){if(!ws&&s.actualRowCount>0)ws=s});
+        if(!ws){liMsg("That workbook has no data.",false);return}
+        var rows=[];
+        ws.eachRow({includeEmpty:true},function(row){var a=[];row.eachCell({includeEmpty:true},function(c,cn){a[cn-1]=cellVal(c.value)});rows.push(a)});
+        liProcess(rows,nm);
+      }).catch(function(){liMsg("Could not open that Excel file. Make sure it is a normal .xlsx file.",false)});
+    };
+    rd.readAsArrayBuffer(f);
+  }
+  $("li").onclick=function(){var w=$("liw");w.hidden=!w.hidden;if(!w.hidden){$("lipv").textContent="";$("lidoit").hidden=true;liPending=[]}};
+  $("lipick").onclick=function(){$("imf").click()};
+  $("imf").onchange=function(){var f=this.files&&this.files[0];this.value="";if(f)liRead(f)};
+  $("lidoit").onclick=function(){
+    if(!liPending.length)return;
+    var n=liPending.length;
+    leads=leads.concat(liPending);liPending=[];saveL();renderL();
+    liMsg('<b style="color:var(--done)">Imported '+n+' lead'+(n===1?'':'s')+'.</b> They are now on your Leads page.',false);
+  };
+  var SRC=["Mo Finance Team","Road Show","Bajaj Service Centre"];
+  function setSrc(v){var s=$("ls");if(v&&SRC.indexOf(v)<0){s.value="__other";$("lso").value=v}else{s.value=v;$("lso").value=""}$("lso").hidden=s.value!=="__other"}
+  function getSrc(){var v=$("ls").value;return v==="__other"?$("lso").value.trim():v}
+  $("ls").addEventListener("change",function(){var o=this.value==="__other";$("lso").hidden=!o;if(o)$("lso").focus()});
+  $("lso").addEventListener("input",function(){$("ls").classList.remove("gap")});
+  var GAPIDS=["lp","lr","ldi","ll","la","lo","ls"],lGaps=[];
+  function clearGaps(){GAPIDS.forEach(function(i){$(i).classList.remove("gap")})}
+  GAPIDS.forEach(function(i){var f=function(){this.classList.remove("gap")};$(i).addEventListener("input",f);$(i).addEventListener("change",f)});
+  function leadGaps(){
+    var g=[];
+    if(!$("lp").value.trim())g.push(["Customer number","lp"]);
+    if(!$("lr").value)g.push(["Region","lr"]);
+    if(!$("ldi").value)g.push(["District","ldi"]);
+    if(!getLoc())g.push(["Location","ll"]);
+    if(!$("la").value)g.push(["Asset description","la"]);
+    if(!$("lo").value.trim())g.push(["Name of sales officer","lo"]);
+    if(!getSrc())g.push(["Leads source","ls"]);
+    return g;
+  }
+  $("lsv").onclick=function(){
+    if(!$("ln").value.trim()){$("ln").focus();return}
+    lGaps=leadGaps();
+    if(!lGaps.length){saveLead();return}
+    $("lwl").innerHTML=lGaps.map(function(g){return "<li>"+g[0]+"</li>"}).join("");
+    lGaps.forEach(function(g){$(g[1]).classList.add("gap")});
+    try{if(navigator.vibrate)navigator.vibrate([180,90,180])}catch(e){}
+    $("lwdlg").showModal();
+  };
+  $("lwgo").onclick=function(){$("lwdlg").close();clearGaps();saveLead()};
+  $("lwfix").onclick=function(){$("lwdlg").close();var f=lGaps[0]&&$(lGaps[0][1]);if(f){f.scrollIntoView({block:"center"});if(f.focus)f.focus()}};
+  $("ldl").onclick=function(){
+    var p=$("lpw");
+    if(p.hidden){var has=!!getPw();$("lpwl").textContent=has?"Enter delete password":"Create a delete password (needed every time you delete)";$("lpok").textContent=has?"Confirm delete":"Save password and delete";p.hidden=false;$("lpwi").focus()}else{p.hidden=true}
+  };
+  $("lpok").onclick=function(){
+    var v=$("lpwi").value;
+    if(v.length<4){$("lpm").textContent="Use at least 4 characters.";return}
+    hash(v).then(function(h){
+      var cur=getPw();
+      if(!cur){setPw(h)}else if(cur!==h){$("lpm").textContent="Wrong password. Lead not deleted.";return}
+      leads=leads.filter(function(l){return l.id!==lEdit});saveL();$("ldlg").close();renderL();
+    });
+  };
+  function ago(ts){var s=Math.max(0,Math.floor((Date.now()-ts)/1000)),m=Math.floor(s/60),h=Math.floor(m/60),d=Math.floor(h/24);if(d>=1)return d+" day"+(d===1?"":"s")+" ago";if(h>=1)return h+" hour"+(h===1?"":"s")+" ago";if(m>=1)return m+" min ago";return "just now"}
+  function dago(d){var a=new Date(d+"T00:00:00"),b=new Date();b.setHours(0,0,0,0);var n=Math.round((b-a)/864e5);return n<=0?"today":n===1?"yesterday":n+" days ago"}
+  $("lat").onclick=function(){
+    var p=$("latp");
+    if(p.hidden){var has=!!getPw();$("latpl").textContent=has?"Enter password":"Create a password (also used for deleting)";$("latok").textContent=has?"Unlock":"Save password and unlock";p.hidden=false;$("latpi").focus()}else{p.hidden=true}
+  };
+  $("latok").onclick=function(){
+    var v=$("latpi").value;
+    if(v.length<4){$("latm").textContent="Use at least 4 characters.";return}
+    hash(v).then(function(h){
+      var cur=getPw();
+      if(!cur){setPw(h)}else if(cur!==h){$("latm").textContent="Wrong password.";return}
+      var l=leads.filter(function(x){return x.id===lEdit})[0],t=l&&l.created;
+      $("latv").textContent=t?new Date(t).toLocaleString(undefined,{weekday:"short",day:"numeric",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"})+" ("+ago(t)+")":"Not recorded for this lead.";
+      $("latp").hidden=true;$("latpi").value="";$("latm").textContent="";
+    });
+  };
+  $("lcv").onclick=function(){
+    var l=leads.filter(function(x){return x.id===lEdit})[0];if(!l)return;
+    var st=$("lcs").value,now=Date.now(),exists=l.clientId&&data.some(function(c){return c.id===l.clientId});
+    var dup=exists?null:findDup({name:String(l.name||"").toUpperCase(),phone:l.phone},null);if(dup){l.clientId=dup.id;exists=true}
+    if(exists){
+      data=data.map(function(c){return c.id===l.clientId?Object.assign({},c,{status:st},st==="Onboarded"&&c.status!=="Onboarded"?{doneOn:now}:{}):c});
+    }else{
+      var notes=["Converted from a lead","Lead type: "+l.type,l.region?"Region: "+l.region:"",l.district?"District: "+l.district:"",l.source?"Source: "+l.source:"",l.officer?"Sales officer: "+l.officer:""].filter(Boolean).join("\n");
+      var rec={id:"c"+now,name:String(l.name||"").toUpperCase(),phone:l.phone||"",location:l.location||"",asset:l.asset||"",status:st,follow:"",missing:[],notes:notes,added:now};
+      if(st==="Onboarded")rec.doneOn=now;
+      data.push(rec);l.clientId=rec.id;
+    }
+    l.converted=st;save();saveL();render();renderL();
+    $("lcv").textContent="Update client status";$("ltn").hidden=st!=="Onboarded";
+    $("lcm").textContent=(exists?"Client status updated to ":"Added to clients as ")+st+".";
+  };
+  $("llist").onclick=function(e){if(selMode){var cd=e.target.closest(".card");if(cd&&!e.target.closest("a")){var sid=cd.getAttribute("data-id");if(sel[sid])delete sel[sid];else sel[sid]=true;renderL()}return}if(e.target.closest("a"))return;var cb=e.target.closest(".cbtn");if(cb){openL(cb.getAttribute("data-id"));setTimeout(function(){$("lcv").scrollIntoView({block:"center"})},60);return}var b=e.target.closest(".card");if(b)openL(b.getAttribute("data-id"))};
+  $("lstats").onclick=function(e){var b=e.target.closest(".stat");if(!b)return;var s=b.getAttribute("data-s");lFilter=lFilter===s?"":s;renderL()};
+  $("lq").oninput=renderL;
+  
+  
+  function xDateRows(){
+    var df=$("xf").value,dt=$("xt").value;
+    return leads.filter(function(l){
+      if(df&&(l.date||"")<df)return false;
+      if(dt&&(l.date||"")>dt)return false;
+      
+      
+      
+      return true;
+    }).sort(function(a,b){return (a.date||"").localeCompare(b.date||"")});
+  }
+  function xRows(){
+    var nums=leadNums(),f=parseInt($("xnf").value,10),t=parseInt($("xnt").value,10);
+    return xDateRows().filter(function(l){var n=nums[l.id];if(f>0&&n<f)return false;if(t>0&&n>t)return false;return true}).sort(function(a,b){return nums[a.id]-nums[b.id]});
+  }
+  function xCount(){var nm=leadNums(),dr=xDateRows().map(function(l){return nm[l.id]});$("xnr").textContent=dr.length?"Leads in this date range are numbered "+Math.min.apply(null,dr)+" to "+Math.max.apply(null,dr)+".":"No leads in this date range.";$("xnf").placeholder=dr.length?Math.min.apply(null,dr):"";$("xnt").placeholder=dr.length?Math.max.apply(null,dr):"";var n=xRows().length;$("xc").textContent=n+" lead"+(n===1?"":"s")+" match your filters"}
+  ["xf","xt","xnf","xnt"].forEach(function(i){$(i).addEventListener("input",xCount);$(i).addEventListener("change",xCount)});
+  $("lx").onclick=function(){var w=$("lxw");w.hidden=!w.hidden;if(!w.hidden){if(!$("xfn").value)$("xfn").value="N-LEADS-"+today();xCount();$("xm").textContent=""}};
+  function saveX(name,data,ok){
+    var el=$("xm"),ext=name.slice(name.lastIndexOf(".")),mime=ext===".xlsx"?"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":"text/csv";
+    if(window.showSaveFilePicker){
+      var acc={};acc[mime]=[ext];
+      window.showSaveFilePicker({suggestedName:name,types:[{description:"Leads file",accept:acc}]}).then(function(h){
+        return h.createWritable().then(function(w){return w.write(new Blob([data],{type:mime})).then(function(){return w.close()})});
+      }).then(function(){el.textContent=ok}).catch(function(e){
+        if(e&&e.name==="AbortError"){el.textContent="Save cancelled.";return}
+        saveViaCap(name,data,ok);
+      });
+    }else{saveViaCap(name,data,ok)}
+  }
+  function saveViaCap(name,data,ok){
+    var el=$("xm");
+    if(!window.claude||!claude.use){blobDl(name,data,function(r){el.textContent=r?ok:"Save cancelled."});return}
+    claude.use("downloads").then(function(d){
+      if(!d){el.textContent="Saving files isn't available here.";return}
+      return d.save({filename:name,data:data}).then(function(){el.textContent=ok},function(e){el.textContent=e&&e.code==="declined"?"Save cancelled.":"Could not save the file."});
+    }).catch(function(){el.textContent="Could not save the file."});
+  }
+  $("xd").onclick=function(){
+    var rows=xRows();
+    if(!rows.length){$("xm").textContent="No leads match these filters.";return}
+    var aoa=[["DATE","NAME OF CUSTOMER","CUSTOMER NUMBER","REGION","DISTRICT","LOCATION","ASSET DESCRIPTION","NAME OF SALES OFFICER","LEADS SOURCE","LEADS TYPE"]].concat(rows.map(function(l){return [l.date||"",l.name||"",l.phone||"",l.region||"",l.district||"",l.location||"",l.asset||"",l.officer||"",l.source||"",lStat(l)]}));
+    var aoa2=[aoa[0]],kinds=["h"],prevD=null;
+    aoa.slice(1).forEach(function(r){if(prevD!==null&&r[0]!==prevD){aoa2.push([]);kinds.push("s");aoa2.push([]);kinds.push("e")}aoa2.push(r);kinds.push("d");prevD=r[0]});
+    aoa=aoa2;
+    var fname=($("xfn").value||"").trim().replace(/[^A-Za-z0-9 _.()-]+/g,"").replace(/\.(xlsx|csv)$/i,"").trim()||"N-LEADS-"+today(),ok=rows.length+" lead"+(rows.length===1?"":"s")+" saved. Look in your Files or Downloads.";
+    if(window.ExcelJS){
+      var wb=new ExcelJS.Workbook(),ws=wb.addWorksheet("Leads"),Y={type:"pattern",pattern:"solid",fgColor:{argb:"FFFFFF00"}},B={style:"thin",color:{argb:"FF999999"}},nc=aoa[0].length;
+      aoa.forEach(function(r){ws.addRow(r)});
+      [12,26,18,16,16,20,22,26,18,12].forEach(function(w,i){ws.getColumn(i+1).width=w});
+      ws.eachRow({includeEmpty:true},function(row,rn){row.eachCell({includeEmpty:true},function(c,cn){
+        c.border={top:B,left:B,bottom:B,right:B};
+        c.alignment={vertical:"middle",wrapText:true,horizontal:rn===1?"center":"left"};
+        if(rn===1){c.fill=Y;c.font={bold:true}}else if(cn===1||cn===8){c.fill=Y}
+      })});
+      kinds.forEach(function(k,ix){if(k==="s"){var rw=ws.getRow(ix+1);rw.height=10;for(var cc=1;cc<=nc;cc++){rw.getCell(cc).fill={type:"pattern",pattern:"solid",fgColor:{argb:"FF000000"}}}}});
+      ws.views=[{state:"frozen",ySplit:1}];ws.autoFilter={from:{row:1,column:1},to:{row:aoa.length,column:nc}};
+      wb.xlsx.writeBuffer().then(function(buf){var ab=buf instanceof ArrayBuffer?buf:buf.buffer.slice(buf.byteOffset,buf.byteOffset+buf.byteLength);saveX(fname+".xlsx",ab,ok)}).catch(function(){$("xm").textContent="Could not build the Excel file."});
+    }else{
+      var csv=aoa.map(function(r){return r.map(function(v){return '"'+String(v).replace(/"/g,'""')+'"'}).join(",")}).join("\n");
+      saveX(fname+".csv","\ufeff"+csv,ok+" (Excel library unavailable, saved as CSV, which Excel opens too.)");
+    }
+  };
+  $("tot").onclick=function(e){e.stopPropagation();var p=$("totp");p.hidden=!p.hidden};
+  document.addEventListener("click",function(e){if(!e.target.closest("#totp"))$("totp").hidden=true});
+  $("mp").onclick=function(){mOff--;render()};
+  $("mn").onclick=function(){if(mOff<0){mOff++;render()}};
+  $("tg").onclick=function(){var w=$("tgw");w.hidden=!w.hidden;$("tg2").value=getT("2w",mRange().key);$("tg3").value=getT("3w",mRange().key);if(!w.hidden)$("tg2").focus()};
+  $("tgs").onclick=function(){var a=parseInt($("tg2").value,10),b=parseInt($("tg3").value,10);if(!(a>0)){$("tg2").focus();return}if(!(b>0)){$("tg3").focus();return}var K=mRange().key;setT("2w",a,K);setT("3w",b,K);$("tgw").hidden=true;renderDash()};
+  function toB64(d){if(typeof d==="string")return btoa(unescape(encodeURIComponent(d)));var u=new Uint8Array(d),s="";for(var i=0;i<u.length;i+=32768)s+=String.fromCharCode.apply(null,u.subarray(i,i+32768));return btoa(s)}
+  function blobDl(name,data,cb){
+    cb=cb||function(){};
+    var C=window.Capacitor,ext=name.slice(name.lastIndexOf(".")),mime=ext===".xlsx"?"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":ext===".json"?"application/json":"text/csv";
+    function plain(){
+      var u=URL.createObjectURL(new Blob([data],{type:mime})),a=document.createElement("a");
+      a.href=u;a.download=name;document.body.appendChild(a);a.click();
+      setTimeout(function(){a.remove();URL.revokeObjectURL(u)},1500);cb(true);
+    }
+    if(C&&C.isNativePlatform&&C.isNativePlatform()&&C.Plugins&&C.Plugins.Filesystem&&C.Plugins.Share){
+      C.Plugins.Filesystem.writeFile({path:name,data:toB64(data),directory:"CACHE"}).then(function(r){return C.Plugins.Share.share({title:name,url:r.uri,dialogTitle:"Save or send this file"})}).then(function(){cb(true)}).catch(function(){cb(false)});
+      return;
+    }
+    if(window.showSaveFilePicker){
+      var acc={};acc[mime]=[ext];
+      window.showSaveFilePicker({suggestedName:name,types:[{description:"File",accept:acc}]}).then(function(h){return h.createWritable().then(function(w){return w.write(new Blob([data],{type:mime})).then(function(){return w.close()})})}).then(function(){cb(true)}).catch(function(e){if(e&&e.name==="AbortError"){cb(false)}else{plain()}});
+      return;
+    }
+    plain();
+  }
+  function msg(t){$("bm").textContent=t}
+  function saveFile(name,text,ok){
+    if(!window.claude||!claude.use){blobDl(name,text,function(r){msg(r?ok:"Save cancelled.")});return}
+    claude.use("downloads").then(function(d){
+      if(!d){msg("Saving files isn't available here. Use Share as text instead.");return}
+      return d.save({filename:name,data:text}).then(function(){msg(ok)},function(e){msg(e&&e.code==="declined"?"Save cancelled.":"Could not save the file. Use Share as text instead.")});
+    }).catch(function(){msg("Could not save the file. Use Share as text instead.")});
+  }
+  $("sv2").onclick=function(){
+    if(!data.length&&!leads.length){msg("Nothing to back up yet.");return}
+    saveFile("N.CUSTOMERS-backup-"+today()+".json",JSON.stringify({app:"N.CUSTOMERS",version:1,customers:data,leads:leads},null,1),"Backup saved. Look in your Files or Downloads.");
+  };
+  $("csv").onclick=function(){
+    if(!data.length){msg("No customers to save yet.");return}
+    var t=data.map(function(c){return [c.name,c.phone,c.location||c.company,c.asset,c.status,c.follow,(c.missing||[]).join("; "),c.notes].map(function(v){return '"'+String(v||"").replace(/"/g,'""')+'"'}).join(",")});
+    t.unshift("Name,Phone,Location,Asset,Status,Follow-up,Missing,Notes");
+    saveFile("N.CUSTOMERS-"+today()+".csv",t.join("\n"),"CSV saved. Open it in Sheets or Excel.");
+  };
+  $("rs").onclick=function(){$("rf").click()};
+  $("rf").onchange=function(){
+    var inp=this,f=inp.files&&inp.files[0];if(!f)return;
+    var r=new FileReader();
+    r.onload=function(){
+      try{
+        var o=JSON.parse(r.result),arr=Array.isArray(o)?o:o.customers;
+        if(!Array.isArray(arr))throw 0;
+        var ids={},added=0,ladded=0;data.forEach(function(c){ids[c.id]=1});
+        arr.forEach(function(c){if(c&&c.name&&c.id&&!ids[c.id]){data.push(c);ids[c.id]=1;added++}});
+        if(o&&Array.isArray(o.leads)){var lid={};leads.forEach(function(l){lid[l.id]=1});o.leads.forEach(function(l){if(l&&l.id&&!lid[l.id]){leads.push(l);lid[l.id]=1;ladded++}});saveL()}
+        save();render();renderL();msg("Restored "+added+" new customer"+(added===1?"":"s")+" and "+ladded+" new lead"+(ladded===1?"":"s")+".");
+      }catch(e){msg("That file isn't a valid backup.")}
+      inp.value="";
+    };
+    r.readAsText(f);
+  };
+  load();loadL();var dn0=dedupe();save();saveL();render();renderL();restoreUi();
+  if(dn0)toast("Merged "+dn0+" duplicate client"+(dn0===1?"":"s")+" so each client appears in one status only.");
+})();
+</script>
+<script>
+if("serviceWorker" in navigator&&/^https?:$/.test(location.protocol)&&!(window.Capacitor&&Capacitor.isNativePlatform&&Capacitor.isNativePlatform())){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})})}
+</script>
+</body>
+</html>

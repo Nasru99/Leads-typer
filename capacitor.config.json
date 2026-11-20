@@ -1,0 +1,6 @@
+{
+  "appId": "com.nasru.nclients",
+  "appName": "NC Clients",
+  "webDir": "www",
+  "server": { "androidScheme": "https" }
+}
